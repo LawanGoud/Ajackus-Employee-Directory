@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Employee Directory</h1>
+      <div class="toolbar">
+        <input
+          type="text"
+          id="searchText"
+          placeholder="Search by name or email..."
+        />
+        <button id="btnSearch">Search</button>
+        <select id="sortMenu">
+          <option value="first-asc">First Name A-Z</option>
+          <option value="first-desc">First Name Z-A</option>
+          <option value="last-asc">Last Name A-Z</option>
+          <option value="last-desc">Last Name Z-A</option>
+          <option value="email-asc">Email A-Z</option>
+          <option value="email-desc">Email Z-A</option>
+        </select>
+        <select id="pageLimit">
+          <option value="5">5 per page</option>
+          <option value="10">10 per page</option>
+          <option value="15">15 per page</option>
+        </select>
+        <button id="addEmployeeBtn">+ Add Employee</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="employeeCards" class="card-container"></div>
+      <div class="pagination">
+        <button id="goPrev">Prev</button>
+        <span id="pageDisplay"></span>
+        <button id="goNext">Next</button>
+      </div>
+    </main>
+
+    <!-- Add/Edit Modal -->
+    <form id="entryModal" class="modal">
+      <div class="modal-content">
+        <h2 id="formHeader">Add Employee</h2>
+        <input type="hidden" id="empId" />
+        <label>First Name</label>
+        <input type="text" id="firstName" required />
+
+        <label>Last Name</label>
+        <input type="text" id="lastName" required />
+
+        <label>Email</label>
+        <input type="email" id="email" required />
+
+        <label>Department</label>
+        <input type="text" id="department" required />
+
+        <label>Position</label>
+        <input type="text" id="position" required />
+
+        <div class="modal-buttons">
+          <button type="submit">Save</button>
+          <button type="button" class="modal-dismiss">Cancel</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="removeModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to remove this employee?</p>
+        <div class="modal-buttons">
+          <button id="confirmRemove">Yes, Remove</button>
+          <button class="modal-dismiss">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
