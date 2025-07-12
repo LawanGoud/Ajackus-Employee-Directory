@@ -38,7 +38,7 @@ employee-directory/
 
 ```
 
-git clone [https://github.com/your-username/employee-directory.git](https://github.com/your-username/employee-directory.git)
+git clone https://github.com/LawanGoud/Ajackus-Employee-Directory.git
 
 ```
 
